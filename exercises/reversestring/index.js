@@ -16,8 +16,11 @@
 
 // Solution 1 Refactor
 function reverse(str) {
+    debugger;
     return str.split('').reverse().join('');
 }
+
+reverse('asdf');
 
 //Solution 2
 // function reverse(str) {
@@ -35,5 +38,7 @@ function reverse(str) {
 // function reverse(str) {
 //     return str.split('').reduce((rev, char) =>  char + rev, '');
 // }
+
+
 
 module.exports = reverse;
