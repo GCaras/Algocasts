@@ -34,7 +34,11 @@
 
 //Solution 2:
 
-//evaluates every string at a given point in the array
+/*
+*splits the string into an array and checks each index at the 
+*array length - i - 1 to see if each letter matches the corresponding 
+*index. Much less efficient.
+*/
 function palindrome(str) {
     return str.split('').every((char, i) => {
         return char === str[str.length - i - 1];  
