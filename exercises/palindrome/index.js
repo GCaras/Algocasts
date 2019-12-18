@@ -21,9 +21,9 @@
 //Solution 1 refactored:
 
 function palindrome(str) {
-    const pal = str.split('').reverse().join('')
+    const pal = str.split('').reverse().join('');
 
-    return str === pal
+    return str === pal;
 }
 
 module.exports = palindrome;
