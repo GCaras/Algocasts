@@ -9,6 +9,12 @@
 
 //Solution 1:
 
+/*
+*straightforward comparison of the reversed string by 
+*converting to an array, reversing the array, and 
+*joining it into a new string
+*/
+
 // function palindrome(str) {
 //     const pal = str.split('').reverse().join('');
 //     if (str === pal) {
@@ -20,10 +26,20 @@
 
 //Solution 1 refactored:
 
-function palindrome(str) {
-    const pal = str.split('').reverse().join('');
+// function palindrome(str) {
+//     const pal = str.split('').reverse().join('');
 
-    return str === pal;
+//     return str === pal;
+// }
+
+//Solution 2:
+
+//evaluates every string at a given point in the array
+function palindrome(str) {
+    return str.split('').every((char, i) => {
+        return char === str[str.length - i - 1];  
+    })    
 }
+
 
 module.exports = palindrome;
