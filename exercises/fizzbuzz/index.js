@@ -12,6 +12,21 @@
 //   4
 //   buzz
 
-function fizzBuzz(n) {}
+function fizzBuzz(n) {
+    for (i = 1; i <= n; i++) {
+        //first check to see if index is divisible by both 3 and 5
+        if (i % 3 === 0 && i % 5 === 0) {
+            console.log('fizzbuzz')
+        //then check to see is the index is divisible by either 3 or 5 
+        } else if (i % 3 === 0) {
+            console.log('fizz')
+        } else if (i % 5 === 0) {
+            console.log('buzz')
+        } else {
+        //if not divisible by both/either, console log index
+            console.log(i)
+        }
+    }
+}
 
 module.exports = fizzBuzz;
