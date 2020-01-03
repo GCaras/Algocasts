@@ -10,7 +10,17 @@
 
 // My Solution
 function anagrams(stringA, stringB) {
-    return stringA.replace(/[^\w]/g, '').toLowerCase().split('').sort().toString() === stringB.replace(/[^\w]/g, '').toLowerCase().split('').sort().toString('')
+    //
+    return stringA.replace(/[^\w]/g, '')
+        .toLowerCase()
+        .split('')
+        .sort()
+        .toString() ===
+        stringB.replace(/[^\w]/g, '')
+        .toLowerCase()
+        .split('')
+        .sort()
+        .toString('')
 }
 
 module.exports = anagrams;
