@@ -8,19 +8,52 @@
 //   anagrams('RAIL! SAFETY!', 'fairy tales') --> True
 //   anagrams('Hi there', 'Bye there') --> False
 
-// My Solution
+// My Solution:
+
+// function anagrams(stringA, stringB) {
+//     //remove special characters from each string, convert to lowercase, then an array, then sort, then return as string and compare
+//     return stringA.replace(/[^\w]/g, '')
+//         .toLowerCase()
+//         .split('')
+//         .sort()
+//         .toString() ===
+//         stringB.replace(/[^\w]/g, '')
+//         .toLowerCase()
+//         .split('')
+//         .sort()
+//         .toString('')
+// }
+
+// Solution 1:
+
+// Helper function to loop through each string in anagrams function to remove special characters and convert to lowercase and convert to object.
+function buildCharMap(str) {
+    const charMap = {};
+    for (let char of str.replace(/[^\w]/g, '').toLowerCase()) {
+        charMap[char] = charMap[char] + 1 || 1;
+    }
+
+    return charMap;
+}
+
 function anagrams(stringA, stringB) {
-    //
-    return stringA.replace(/[^\w]/g, '')
-        .toLowerCase()
-        .split('')
-        .sort()
-        .toString() ===
-        stringB.replace(/[^\w]/g, '')
-        .toLowerCase()
-        .split('')
-        .sort()
-        .toString('')
+    //create formatted variable objects within the anagram function using helper function
+    const aCharMap = buildCharMap(stringA);
+    const bCharMap = buildCharMap(stringB);
+
+    //compare amount of keys in each object and return false if not matching
+    if (Object.keys(aCharMap).length !== Object.keys(bCharMap).length) {
+        return false;
+    } 
+
+    //if key amounts match, compare amout of each key in aCharMap to the corresponding key in bCharMap and return false if there isn't a match;
+    for (let char in aCharMap) {
+        if (aCharMap[char] !== bCharMap[char]) {
+            return false;
+        } 
+    } 
+    //return true if all above conditions are met
+    return true;
 }
 
 module.exports = anagrams;
