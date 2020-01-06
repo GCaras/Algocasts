@@ -10,13 +10,12 @@
 // Personal Solution:
 
 function capitalize(str) {
-    //clean up string by making all characters lower case and then split into array by each word
-    const stringArr = str.toLowerCase().split(' ');
     let solution = [];
 
-    //loop through the stringArr to split the first letter of each word and capitalize it, join back with remaining characters and push into solution array
-    for (let word in stringArr) {
-        solution.push(`${stringArr[word][0].toUpperCase()}${stringArr[word].slice(1)}`)
+    //create a loop that splits the string into an array of lower case words.
+    //capitalize the first letter of the string and then join it with the remaining charaters 
+    for (let word of str.toLowerCase().split(' ')) {
+        solution.push(word[0].toUpperCase() + word.slice(1))
     }
 
     //return converted solution array into string
