@@ -17,6 +17,24 @@
 //       '### '
 //       '####'
 
-function steps(n) {}
+// Personal Solution:
+function steps(n) {
+    //loop through each 'row' for 'column' comparison and console.log
+    for (let i = 0; i < n; i++) {
+        let stair = '';
+
+        //loop through each 'column' and add a '#' if less than or equal 
+        //to current 'row' or ' ' if  greater than current 'row'
+        for (let j = 0; i < n; j++) {
+            if (j <= i) {
+                stair += '#';
+            } else {
+                stair += ' ';
+            }
+        }
+
+        console.log(stair);
+    }
+}
 
 module.exports = steps;
