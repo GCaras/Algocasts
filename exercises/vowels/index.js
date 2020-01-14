@@ -9,18 +9,33 @@
 
 //Personal solution:
 
+// function vowels(str) {
+//     let count = 0;
+
+//     let vowels = ['a', 'e', 'i', 'o', 'u'];
+
+//     // loop through each character and add to the counter if it matches
+//     // any of the letters within the array
+
+//     for (let char of str.toLowerCase()) {
+//         if (vowels.includes(char)) {
+//             count += 1;
+//         }
+//     }
+
+//     return count;
+// }
+
 function vowels(str) {
-    let count = 0;
+    //search the string for any matches within the brackets
+    //the 'g' makes sure that the match function doesn't stop at the first match
+    //the 'i' makes sure the search is case insensitive
 
-    let vowels = ['a', 'e', 'i', 'o', 'u'];
+    const matches = str.match(/[aeiou]/gi);
 
-    for ( let char of str.toLowerCase()) {
-        if (vowels.includes(char)) {
-            count += 1;
-        }
-    }
-
-    return count;
+    //ternery expression to return 0 if there are no matches
+    //so that the matches variable doesn't return null
+    return matches ? matches.length : 0;
 }
 
 module.exports = vowels;
